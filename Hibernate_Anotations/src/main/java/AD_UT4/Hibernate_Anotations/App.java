@@ -31,12 +31,12 @@ public class App
         // Crea un nuevo libro
         Cliente nuevoLibro = new Cliente("andres");
 
-        // Guarda el libro en la base de datos
-        em.getTransaction().begin();
-        em.persist(nuevoLibro);
-        em.getTransaction().commit();              
-        em.close();
-        emf.close();
+        // Guarda el libro en la base de datos, si no existe la tabla la crea
+        em.getTransaction().begin();  // indico transacción
+        em.persist(nuevoLibro);       // indico que quiero persistir el objeto libro en la BBDD
+        em.getTransaction().commit(); // confirmo la operación             
+        em.close();					  // cierro el entity manager
+        emf.close();				  // cierro el factory entity manager
         
 
        

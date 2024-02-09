@@ -5,16 +5,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-
+// indicamos que esta clase se ha de tratar como una entidad de la BBDD
 @Entity
 public class Cliente {
 
-	@Id
+	@Id   // indicamos cuales la clave primaria y el modo de generación automática
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String nombre;
-	
+	private String nombre;  // un atributo, no hace falta ponerle etiquete
+							// si no hay la menos un atributo no crea la tabla, no hay registros que crear
 	public String getNombre() {
 		return nombre;
 	}
